@@ -66,7 +66,7 @@ const engineerq = [
     },
 
     {
-        name: "engineerSchool",
+        name: "engineerGithub",
         message: "What is this engineers GitHub?",
         type: "input",
     },
@@ -98,6 +98,19 @@ const internq = [
     },
 ]
 
+const addEmpq = [{
+        name: "addEmp",
+        message: "Would you like to add another employee?",
+        type: "confirm",
+}]
+
+const empTypeq = [{
+    name: "empType",
+    message: "Which type of employee is this?",
+    type: "list",
+    choices: ["Engineer", "Intern"],    
+}]
+
 //addEmp = await inquirer.prompt(add employee question) = true/false
 //while loop (addEmp) {
 //employeeType = await inquirer.prompt(which Employee types (e/i))
@@ -118,5 +131,18 @@ inquirer.prompt(managerq)
         return team
     })
     .then(async function(team) {
-        
+        let {addEmp} = await inquirer.prompt(addEmpq)
+        while(addEmp) {
+            let {empType} = await inquirer.prompt(empTypeq)
+            if(empType == "Engineer") {
+              let engineerEmp = await inquirer.prompt(engineerq)
+              team.engineer.push(engineerEmp)
+            } else {
+              let internEmp = await inquirer.prompt(internq)
+              team.interns.push(internEmp)  
+            }
+
+           addEmp = (await inquirer.prompt(addEmpq)).addEmp
+        }
+        console.log(team)
     })
