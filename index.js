@@ -121,8 +121,19 @@ inquirer.prompt(managerq)
 
 
 
+// Create HTML file locally to develop to make sure it works properly
 
-//addEmp = await inquirer.prompt(add employee question) = true/false
+// Bootstrap CDN link, CSS file link
+// Create function that generates the HTML(Outside of function generate card function)
+// Pass class object. 
+
+
+
+
+
+
+
+    //addEmp = await inquirer.prompt(add employee question) = true/false
 //while loop (addEmp) {
 //employeeType = await inquirer.prompt(which Employee types (e/i))
 //if(employee type = e/i) 
