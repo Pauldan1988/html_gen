@@ -2,24 +2,6 @@ import inquirer from "inquirer";
 // const inquirer = require("inquirer") 
 // const fs = require("fs")
 
-
-// team = {
-//     manager: {
-//        ...
-//     },
-//     engineers: [
-//        {...},
-//        {...},
-//     ],
-//     interns: [
-//        {...},
-//        {...},
-//     ]
-//  }
-
-
-
-
 const managerq = [
     {
         name: "managerName",
@@ -111,16 +93,6 @@ const empTypeq = [{
     choices: ["Engineer", "Intern"],    
 }]
 
-//addEmp = await inquirer.prompt(add employee question) = true/false
-//while loop (addEmp) {
-//employeeType = await inquirer.prompt(which Employee types (e/i))
-//if(employee type = e/i) 
-//await inquirer.prompt(add e)
-//
-//addEmp = await inquirer.prompt(add employee)
-//If type engineer. Prompt for engineer.
-//team.interns/engineer.push(empinfo)
-
 inquirer.prompt(managerq)
     .then(function (answer) {
         const team = {
@@ -146,3 +118,16 @@ inquirer.prompt(managerq)
         }
         console.log(team)
     })
+
+
+
+
+//addEmp = await inquirer.prompt(add employee question) = true/false
+//while loop (addEmp) {
+//employeeType = await inquirer.prompt(which Employee types (e/i))
+//if(employee type = e/i) 
+//await inquirer.prompt(add e)
+//
+//addEmp = await inquirer.prompt(add employee)
+//If type engineer. Prompt for engineer.
+//team.interns/engineer.push(empinfo)
