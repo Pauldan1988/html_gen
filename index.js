@@ -1,28 +1,35 @@
-import inquirer from "inquirer";
+import inquirer from "inquirer"
 // const inquirer = require("inquirer") 
-// const fs = require("fs")
+import fs from "fs"
+
+import generateHtml from "./lib/generatehtml.js"
+import Manager from "./lib/Manager.js"
+import Engineer from "./lib/Engineer.js";
+import Employee from "./lib/Employee.js";
+import Intern from "./lib/Intern.js";
+
 
 const managerq = [
     {
-        name: "managerName",
+        name: "name",
         message: "What is this managers name?",
         type: "input",
     },
 
     {
-        name: "managerEmail",
+        name: "email",
         message: "What is the E-Mail address of this manager?",
         type: "input",
     },
 
     {
-        name: "managerId",
+        name: "id",
         message: "What is this managers ID?",
         type: "input",
     },
 
     {
-        name: "managerOfficeNum",
+        name: "officeNumber",
         message: "What is this managers office Number?",
         type: "input",
     },
@@ -30,25 +37,25 @@ const managerq = [
 
 const engineerq = [
     {
-        name: "engineerName",
+        name: "name",
         message: "What is this engineers name?",
         type: "input",
     },
 
     {
-        name: "engineerEmail",
+        name: "email",
         message: "What is the E-Mail address of this engineer?",
         type: "input",
     },
 
     {
-        name: "engineerId",
+        name: "id",
         message: "What is this engineers ID?",
         type: "input",
     },
 
     {
-        name: "engineerGithub",
+        name: "github",
         message: "What is this engineers GitHub?",
         type: "input",
     },
@@ -56,25 +63,25 @@ const engineerq = [
 
 const internq = [
     {
-        name: "internName",
+        name: "name",
         message: "What is this interns name?",
         type: "input",
     },
 
     {
-        name: "internEmail",
+        name: "email",
         message: "What is the E-Mail address of this intern?",
         type: "input",
     },
 
     {
-        name: "internId",
+        name: "id",
         message: "What is this interns ID?",
         type: "input",
     },
 
     {
-        name: "internGithub",
+        name: "school",
         message: "Where is this intern going to school?",
         type: "input",
     },
@@ -116,10 +123,29 @@ inquirer.prompt(managerq)
 
            addEmp = (await inquirer.prompt(addEmpq)).addEmp
         }
+        const teamArray = [new Manager(team.manager.name, team.manager.id, team.manager.email, team.manager.officeNumber)]
+        team.engineer.forEach(engineer => {
+            //Create a new engineer instance
+            //After created put it in teamArray
+        })
+        team.interns.forEach(intern => {
+        new Intern[(team.interns.name, team.interns.id, team.interns.email, team.interns.school)]
+        })
+        fs.writeFile("./dist/index.html", generateHtml(teamArray),(error) => {
+                
+            if (error) {
+                    console.log(error)
+                } 
+            })
         console.log(team)
     })
 
 
+
+    
+    //
+    
+    // [new Manager(team.manager.name, team.manager.id, team.manager.email, team.manager.officeNumber)]
 
 // Create HTML file locally to develop to make sure it works properly
 
