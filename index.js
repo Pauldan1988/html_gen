@@ -125,11 +125,14 @@ inquirer.prompt(managerq)
         }
         const teamArray = [new Manager(team.manager.name, team.manager.id, team.manager.email, team.manager.officeNumber)]
         team.engineer.forEach(engineer => {
+        const engineerArr = new Engineer(engineer.name, engineer.id, engineer.email, engineer.github)
+        teamArray.push(engineerArr)
             //Create a new engineer instance
             //After created put it in teamArray
         })
         team.interns.forEach(intern => {
-        new Intern[(team.interns.name, team.interns.id, team.interns.email, team.interns.school)]
+        const internArr = new Intern(intern.name, intern.id, intern.email, intern.school)
+        teamArray.push(internArr)
         })
         fs.writeFile("./dist/index.html", generateHtml(teamArray),(error) => {
                 
