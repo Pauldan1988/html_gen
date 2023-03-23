@@ -1,5 +1,5 @@
 //@ts-check
-import Intern from "../lib/Intern"
+const Intern = require("../lib/Intern.cjs")
 
 const Wendy = new Intern("Wendy", 400, "Wendy437@gmail.com", "ASU")
 

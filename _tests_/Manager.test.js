@@ -1,5 +1,5 @@
 //@ts-check
-import Manager from "../lib/Manager"
+const Manager = require("../lib/Manager.cjs")
 
 const William = new Manager("William", 100, "William@gmail.com", 1005)
 

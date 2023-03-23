@@ -3,10 +3,10 @@ import inquirer from "inquirer"
 import fs from "fs"
 
 import generateHtml from "./lib/generatehtml.js"
-import Manager from "./lib/Manager.js"
-import Engineer from "./lib/Engineer.js";
-import Employee from "./lib/Employee.js";
-import Intern from "./lib/Intern.js";
+import Manager from "./lib/Manager.cjs"
+import Engineer from "./lib/Engineer.cjs";
+// const Employee = require("../lib/Employee")
+import Intern from "./lib/Intern.cjs";
 
 
 const managerq = [

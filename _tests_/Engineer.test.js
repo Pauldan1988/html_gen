@@ -1,11 +1,16 @@
 //@ts-check
-import Engineer from "../lib/Engineer"
+const Engineer = require("../lib/Engineer.cjs")
 
-const Jacob = new Engineer("Jacob", 200, "Jacob235@gmail.com", "Jacob235")
+
 
 test("Employee has name", () => {
-    expect(Jacob.name).toBe("Jacob")
-    expect(Jacob.id).toBe(200);
-    expect(Jacob.email).toBe("Jacob235@gmail.com");
-    expect(Jacob.github).toBe("Jacob235")
+    let engineer = new Engineer("Jacob", 200, "Jacob235@gmail.com", "Jacob235")
+    
+    
+    
+    expect(engineer.name).toBe("Jacob")
+    expect(engineer.id).toBe(200);
+    expect(engineer.email).toBe("Jacob235@gmail.com");
+    expect(engineer.github).toBe("Jacob235")
 })  
+
